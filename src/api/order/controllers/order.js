@@ -17,6 +17,7 @@ module.exports = createCoreController("api::order.order", ({ strapi }) => ({
     });
 
     // send an email after confirmation
+    strapi.services("api::order.order").sendEmail(id, ctx.state.user);
     return {
       message: "confirmed",
     };
